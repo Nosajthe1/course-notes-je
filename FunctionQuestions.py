@@ -25,9 +25,7 @@ print("\nQ1b\n")
 def factor(num1, num2):
     div_list_num1 = divisor(num1)
     div_list_num2 = divisor(num2)
-    if num1 in div_list_num2:
-        return True
-    if num2 in div_list_num1:
+    if num1 in div_list_num2 or num2 in div_list_num1:
         return True
     else:
         return False
@@ -35,8 +33,6 @@ def factor(num1, num2):
 
 factor(6, 12)
 # A1b:
-
-
 
 # -------------------------------------------------------------------------------------- #
 
