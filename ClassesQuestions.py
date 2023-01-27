@@ -65,16 +65,24 @@ class Number:
 list_of_primes = []
 num1 = Number(1)
 for num in list_of_numbers:
-    if num.is_prime() == True:
+    list_num = Number(num)
+    if list_num.is_prime() == True:
         list_of_primes.append(num)
-num2 = Number(12)
-print(num1.is_prime())
+
+print(list_num.is_prime())
 
 print("\nQ2b\n")
 # Q2b: Now create a list of numbers from list_of_numbers that are divisible
 # by both 3 and 4 using the divisible_by_n method above
 
 # A2b:
+divisible_by_3_4 = []
+for num in list_of_numbers:
+    number = Number(num)
+    if number.divisible_by_n(3) and number.divisible_by_n(4):
+        divisible_by_3_4.append(number.integer)
+
+print(divisible_by_3_4)
 
 
 # -------------------------------------------------------------------------------------- #
@@ -83,29 +91,29 @@ print("\nQ3a\n")
 # Q3a: Fix the following class and subclass (uncomment by selecting all rows and pressing CTRL + /)
 
 
-# class Boss(object):
-#     def __init__(self, name, attitude, behaviour, face):
-#         name = name
-#         attitude = attitude
-#         behaviour = behaviour
-#         face = face
-#
-#     def get_attitude(self):
-#         return attitude
-#
-#     def get_behaviour(self):
-#         return behaviour
-#
-#     def get_face(self):
-#         return face
-#
-#
-# class GoodBoss(Boss):
-#     def __init__(self, name, attitude, behaviour, face):
-#         super()
-#
-#    def encourage(self):
-#        print(f"The team cheers for {self.name}, starts shouting awesome slogans then gets back to work.")
+class Boss(object):
+    def __init__(self, name, attitude, behaviour, face):
+        self.name = name
+        self.attitude = attitude
+        self.behaviour = behaviour
+        self.face = face
+
+    def get_attitude(self):
+        return self.attitude
+
+    def get_behaviour(self):
+        return self.behaviour
+
+    def get_face(self):
+        return self.face
+
+
+class GoodBoss(Boss):
+    def __init__(self, name, attitude, behaviour, face):
+        super().__init__(name, attitude, behaviour, face)
+
+    def encourage(self):
+        print(f"The team cheers for {self.name}, starts shouting awesome slogans then gets back to work.")
 
 
 # A3a:
